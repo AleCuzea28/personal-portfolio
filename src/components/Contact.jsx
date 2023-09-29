@@ -1,8 +1,8 @@
 import { useState } from "react"
 import {Container, Row, Col} from "react-bootstrap";
-import contactImg from "../assets/img/contact-img.png";
+import contactImg from "../assets/img/contact-img.svg";
 
-export const Contact = () => {
+export const Contact = () => { 
 
     const formInitialDetails = {
         firstName: '',
@@ -17,15 +17,31 @@ export const Contact = () => {
     const [status, setStatus] = useState({});
 
     const onFormUpdate = (category, value) => {
-    setFormDetails({
-        ...formDetails,
-        [category]: value
-    })
+        setFormDetails({
+            ...formDetails,
+            [category]: value
+        })
     }
 
-    const handleSubmit = () => {
-
-    }
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        let response = await fetch("http://localhost:5000/contact", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json;charset=utf-8",
+            },
+            body: JSON.stringify(formDetails),
+          });
+          setButtonText("Send");
+          let result = await response.json();
+          setFormDetails(formInitialDetails);
+          if (result.code === 200) {
+            setStatus({ succes: true, message: 'Message sent successfully'});
+          } else {
+            setStatus({ succes: false, message: 'Something went wrong, please try again later.'});
+          }
+    };        
+    
 
     return (
         <section className="contact" id="contact">
@@ -81,7 +97,7 @@ export const Contact = () => {
                                 {
                                     status.message &&
                                     <Col>
-                                        <p className={status.success == false ? "danger" : "success"}>{status.message}</p>
+                                        <p className={status.success === false ? "danger" : "success"}>{status.message}</p>
                                     </Col>
                                 }
                             </Row>
