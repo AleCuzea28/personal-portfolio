@@ -29,6 +29,10 @@ export function NavBar() {
         setActiveLink(value);
     }
 
+    // const handleClick = () => {
+    //     ref.current?.scrollIntoView({behavior: "smooth"});
+    // }
+
     return (
         <Navbar expand="lg" className={scrolled ? "scrolled": ""}>
             <Container>
@@ -61,9 +65,9 @@ export function NavBar() {
                     </Nav>
                     <span className="navbar-text">
                         <div className="social-icon">
-                            <a href="#"><img src={navIcon1} alt=""/></a>
-                            <a href="#"><img src={navIcon2} alt=""/></a>
-                            <a href="#"><img src={navIcon3} alt=""/></a>
+                            <a href="https://www.linkedin.com/in/gabriela-alexandra-cuzea-674a9b20a/"><img src={navIcon1} alt=""/></a>
+                            <a href="https://www.facebook.com/alexandra.cuzea/?locale=ro_RO"><img src={navIcon2} alt=""/></a>
+                            <a href="https://www.instagram.com/ale_cuzea/"><img src={navIcon3} alt=""/></a>
                         </div>
                         <button className="vvd" onClick={()=>{console.log('connect')}}><span>Let's connect</span></button>
                     </span>
