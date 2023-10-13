@@ -1,10 +1,8 @@
 import { Container, Row, Col } from "react-bootstrap";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import meter1 from "../assets/img/meter1.svg";
-import meter2 from "../assets/img/meter2.svg";
-import meter3 from "../assets/img/meter3.svg";
-import colorSharp from "../assets/img/color-sharp.png";
+import star from "../assets/img/star.png";
+import banner from "../assets/img/banner-bg.jpeg";
 
 
 export const Skills = () => {
@@ -37,30 +35,42 @@ export const Skills = () => {
                             <h2>
                                 Skills
                             </h2>
-                            <p>ksgvruifsgfrishf sirfghisrghishfdshf sirhfisfrhu</p>
+                            <p>Explore my skills and experience below to discover how I can make a positive impact.</p>
                             <Carousel responsive={responsive} infinite={true} className="skill-slider">
                                 <div className="item">
-                                    <img src={meter1} alt="Image" />
-                                    <h5>Web development</h5>
+                                    <img src={star} alt="Skill star" />
+                                    <h5>React</h5>
                                 </div>
                                 <div className="item">
-                                    <img src={meter2} alt="Image" />
-                                    <h5>Brand Identity</h5>
+                                    <img src={star} alt="Skill star" />
+                                    <h5>Python</h5>
                                 </div>
                                 <div className="item">
-                                    <img src={meter3} alt="Image" />
-                                    <h5>Logo</h5>
+                                    <img src={star} alt="Skill star" />
+                                    <h5>Node JS</h5>
                                 </div>
                                 <div className="item">
-                                    <img src={meter1} alt="Image" />
-                                    <h5>Web design</h5>
+                                    <img src={star} alt="Skill star" />
+                                    <h5>Linux</h5>
+                                </div>
+                                <div className="item">
+                                    <img src={star} alt="Skill star" />
+                                    <h5>C/C++</h5>
+                                </div>
+                                <div className="item">
+                                    <img src={star} alt="Skill star" />
+                                    <h5>SQL/MongoDB</h5>
+                                </div>
+                                <div className="item">
+                                    <img src={star} alt="Skill star" />
+                                    <h5>Java</h5>
                                 </div>
                             </Carousel>
                         </div>
                     </Col>
                 </Row>
             </Container>
-            <img className="background-image-left" src={colorSharp} />
+            <img className="background-image-left" src={banner} />
         </section>
       )
 }
